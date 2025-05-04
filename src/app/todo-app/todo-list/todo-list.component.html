@@ -1,0 +1,13 @@
+<ul>
+  <li *ngFor="let todo of todoService.filteredTodos()">
+    <input
+      type="checkbox"
+      [checked]="todo.completed"
+      (change)="toggle(todo.id)"
+    />
+    <span [style.textDecoration]="todo.completed ? 'line-through' : 'none'">
+      {{ todo.title }}
+    </span>
+    <button (click)="remove(todo.id)">🗑</button>
+  </li>
+</ul>
