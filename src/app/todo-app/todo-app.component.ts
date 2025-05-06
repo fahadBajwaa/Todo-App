@@ -8,7 +8,6 @@ import { TodoService } from './services/todo.service';
 })
 export class TodoAppComponent {
   newTitle = '';
-
   constructor(private todoService: TodoService) {}
 
   addTodo() {
