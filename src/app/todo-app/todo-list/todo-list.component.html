@@ -1,16 +1,18 @@
-<ul>
-  <!-- <li *ngFor="let todo of todoService.filteredTodos()"> -->
+<div class="container">
+  <ul>
+    <!-- <li *ngFor="let todo of todoService.filteredTodos()"> -->
     @for (todo of todoService.filteredTodos(); track todo.id) {
     <li>
-    <input
-      type="checkbox"
-      [checked]="todo.completed"
-      (change)="toggle(todo.id)"
-    />
-    <span [style.textDecoration]="todo.completed ? 'line-through' : 'none'">
-      {{ todo.title }}
-    </span>
-    <button (click)="removeTodo(todo.id)">🗑</button>
-  </li>
-}
-</ul>
+      <input
+        type="checkbox"
+        [checked]="todo.completed"
+        (change)="toggle(todo.id)"
+      />
+      <span [style.textDecoration]="todo.completed ? 'line-through' : 'none'">
+        {{ todo.title }}
+      </span>
+      <button (click)="removeTodo(todo.id)">🗑</button>
+    </li>
+    }
+  </ul>
+</div>

@@ -1,14 +1,16 @@
-<h1>📝 Signal Todo App</h1>
-<app-todo-filter></app-todo-filter>
-<form (ngSubmit)="addTodo()">
-  <input
-    type="text"
-    [(ngModel)]="newTitle"
-    name="title"
-    placeholder="New todo..."
-    required
-  />
-  <button type="submit">Add</button>
-</form>
-<app-todo-summary></app-todo-summary>
-<app-todo-list></app-todo-list>
+<div class="container">
+  <h1>📝 Signal Todo App</h1>
+  <app-todo-filter></app-todo-filter>
+  <form (ngSubmit)="addTodo()">
+    <input
+      type="text"
+      [(ngModel)]="newTitle"
+      name="title"
+      placeholder="New todo..."
+      required
+    />
+    <button type="submit">Add</button>
+  </form>
+  <app-todo-summary></app-todo-summary>
+  <app-todo-list></app-todo-list>
+</div>
