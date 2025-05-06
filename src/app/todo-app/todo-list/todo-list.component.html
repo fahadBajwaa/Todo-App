@@ -1,5 +1,7 @@
 <ul>
-  <li *ngFor="let todo of todoService.filteredTodos()">
+  <!-- <li *ngFor="let todo of todoService.filteredTodos()"> -->
+    @for (todo of todoService.filteredTodos(); track todo.id) {
+    <li>
     <input
       type="checkbox"
       [checked]="todo.completed"
@@ -10,4 +12,5 @@
     </span>
     <button (click)="remove(todo.id)">🗑</button>
   </li>
+}
 </ul>
