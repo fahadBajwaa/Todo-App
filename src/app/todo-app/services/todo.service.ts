@@ -5,39 +5,39 @@ import { Todo } from '../todo.model';
   providedIn: 'root'
 })
 export class TodoService {
-  private todos = signal<Todo[]>([]);
-  private filterText = signal('');
+  private _todos = signal<Todo[]>([]);
+  private _filterText = signal('');
   
   filteredTodos = computed(() =>
-    this.todos().filter(todo =>
-      todo.title.toLowerCase().includes(this.filterText().toLowerCase())
+    this._todos().filter(todo =>
+      todo.title.toLowerCase().includes(this._filterText().toLowerCase())
     )
   );
   remainingCount = computed(() =>
-    this.todos().filter(todo => !todo.completed).length
+    this._todos().filter(todo => !todo.completed).length
   );
   constructor() {
     effect(() => {
-      console.log('Current todos:', this.todos());
+      console.log('Current todos:', this._todos());
     });
   }
   addTodo(title: string) {
-    this.todos.update(todos => [
-      ...todos,
+    this._todos.update(_todos => [
+      ..._todos,
       { id: Date.now(), title, completed: false }
     ]);
   }
   toggleTodo(id: number) {
-    this.todos.update(todos =>
-      todos.map(todo =>
+    this._todos.update(_todos =>
+      _todos.map(todo =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
   }
   removeTodo(id: number) {
-    this.todos.update(todos => todos.filter(todo => todo.id !== id));
+    this._todos.update(_todos => _todos.filter(todo => todo.id !== id));
   }
   setFilter(text: string) {
-    this.filterText.set(text);
+    this._filterText.set(text);
   }
 }
