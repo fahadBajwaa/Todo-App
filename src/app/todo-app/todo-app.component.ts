@@ -4,7 +4,7 @@ import { TodoService } from './services/todo.service';
 @Component({
   selector: 'app-todo-app',
   templateUrl: './todo-app.component.html',
-  styleUrls: ['./todo-app.component.scss'],
+  styleUrl: './todo-app.component.scss',
 })
 export class TodoAppComponent {
   newTitle = '';

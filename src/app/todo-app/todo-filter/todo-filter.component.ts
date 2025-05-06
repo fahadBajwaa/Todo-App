@@ -4,7 +4,7 @@ import { TodoService } from '../services/todo.service';
 @Component({
   selector: 'app-todo-filter',
   templateUrl: './todo-filter.component.html',
-  styleUrls: ['./todo-filter.component.scss'],
+  styleUrl: './todo-filter.component.scss',
 })
 export class TodoFilterComponent {
   constructor(private todoService: TodoService) {}
