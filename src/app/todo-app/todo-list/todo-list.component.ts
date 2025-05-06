@@ -12,7 +12,7 @@ export class TodoListComponent {
   toggle(id: number) {
     this.todoService.toggleTodo(id);
   }
-  remove(id: number) {
+  removeTodo(id: number) {
     this.todoService.removeTodo(id);
   }
 }
