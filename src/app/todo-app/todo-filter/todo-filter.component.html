@@ -1,5 +1,8 @@
-<input
-  type="text"
-  placeholder="Filter todos..."
-  (input)="onFilterChange($any($event.target).value)"
-/>
+<div class="container">
+  <input
+    #filterInput
+    type="text"
+    placeholder="Filter todos…"
+    (input)="onFilterChange(filterInput.value)"
+  />
+</div>
