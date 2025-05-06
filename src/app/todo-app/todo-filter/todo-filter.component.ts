@@ -7,9 +7,9 @@ import { TodoService } from '../services/todo.service';
   styleUrl: './todo-filter.component.scss',
 })
 export class TodoFilterComponent {
-  constructor(private todoService: TodoService) {}
+  constructor(private _todoService: TodoService) {}
 
   onFilterChange(value: string) {
-    this.todoService.setFilter(value);
+    this._todoService.setFilter(value);
   }
 }

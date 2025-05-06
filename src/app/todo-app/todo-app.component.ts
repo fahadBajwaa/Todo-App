@@ -8,11 +8,11 @@ import { TodoService } from './services/todo.service';
 })
 export class TodoAppComponent {
   newTitle = '';
-  constructor(private todoService: TodoService) {}
+  constructor(private _todoService: TodoService) {}
 
   addTodo() {
     if (this.newTitle.trim()) {
-      this.todoService.addTodo(this.newTitle);
+      this._todoService.addTodo(this.newTitle);
       this.newTitle = '';
     }
   }
