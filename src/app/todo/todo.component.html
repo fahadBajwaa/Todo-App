@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>📝 Signal Todo (Pure input())</h1>
+  <app-todo-filter [onFilterChange]="setFilter.bind(this)"></app-todo-filter>
+  <form (ngSubmit)="addTodo()">
+    <input
+      type="text"
+      [(ngModel)]="newTitle"
+      name="title"
+      placeholder="New todo…"
+      required
+    />
+    <button type="submit">Add</button>
+  </form>
+  <app-todo-summary [remaining]="remainingCount"></app-todo-summary>
+  <app-todo-list
+    [todos]="filteredTodos"
+    [toggle]="toggleTodo.bind(this)"
+    [remove]="removeTodo.bind(this)"
+  ></app-todo-list>
+</div>
