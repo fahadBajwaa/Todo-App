@@ -1,0 +1,9 @@
+<div class="container">
+  <input
+    #el
+    type="text"
+    [value]="filterText()"        
+    placeholder="Filter todos…"
+    (input)="onFilterChange()(el.value)"  
+  />
+</div>
